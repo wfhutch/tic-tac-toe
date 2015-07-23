@@ -1,0 +1,19 @@
+body {
+	width: 100%;
+}
+
+table {
+	width: 50%;
+	margin: auto auto;
+}
+
+th {
+  font-size: 2em;
+}
+
+td {
+  border: 2px solid black;
+  width: 100px;
+  height: 150px;
+
+}
