@@ -1,10 +1,12 @@
 body {
 	width: 100%;
+  background-color: #DEEFF5;
 }
 
 table {
-	width: 50%;
+	width: 40%;
 	margin: auto auto;
+	border-collapse: collapse;
 }
 
 th {
@@ -15,5 +17,21 @@ td {
   border: 2px solid black;
   width: 100px;
   height: 150px;
-
 }
+
+#buttonDiv {
+	width: 30%;
+	margin: 30px auto 0 auto;
+}
+
+#clickButton {
+	width: 200px;
+	margin-left: 85px;
+	background-color: yellow;
+	visibility: hidden;
+  padding: 15px;
+  border-radius: 10px;
+  border-color: black;
+  font-size: 1em;
+}
+
