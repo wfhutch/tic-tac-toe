@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <title>Tic-Tac-Toe</title>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,7 +11,16 @@
 <body>
   <nav></nav>
 
-  <header></header>
+  <header>
+    <div id="buttonDiv">
+      <button id="clickButton" type="button" onclick="restart()">Click to play again</button>
+    </div>
+  </header>
+
+  <div id="score">
+    <span id="redScore"></span>
+    <span id="blueScore"></span>
+  </div>
 
   <table>
     <thead>
@@ -39,16 +49,6 @@
       </tr>    
     </tbody>
   </table>
-
-  <div id="buttonDiv">
-    <button id="clickButton" onclick="restart()">Click to play again</button>
-  </div>
-
-  <article>
-    <header></header>
-    <section></section>
-    <footer></footer>
-  </article>
 
   <footer></footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>

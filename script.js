@@ -8,7 +8,13 @@ var f = 0;
 var g = 0;
 var h = 0;
 var i = 0;
+var turn = 0;
 var counter = 0;
+var redScore = 0;
+var blueScore= 0;
+
+$("#redScore").html("Red Score: " + redScore);
+$("#blueScore").html("Blue Score: " + blueScore);
 
 function redWinCheck () {
   if (a + b + c === 3) {
@@ -42,28 +48,28 @@ function redWinCheck () {
 
 function blueWinCheck () {
   if (a + b + c === 12) {
-    alert("Blue Wins!");
+    blueWins();
   }
    else if (d + e + f === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else if (g + h + i === 12) {
-     alert("Blue Wins!");
+     blueWins();
    } 
    else if (a + d + g === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else if (b + e + h === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else if (c + f + i === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else if (a + e + i === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else if (c + e + g === 12) {
-     alert("Blue Wins!");
+     blueWins();
    }
    else {
      draw();
@@ -78,167 +84,122 @@ function draw() {
 };
 
 function redWins() {
+  redScore += 1;
+  $("#redScore").html("Red Score: " + redScore);
   alert("Red Wins!");
   $("#clickButton").css("visibility", "visible");
 };
 
 function blueWins () {
+  blueScore += 1;
+  $("#blueScore").html("Red Score: " + blueScore);
   alert("Blue Wins!");
   $("#clickButton").css("visibility", "visible");
 };
 
-function restart() {
-  location.reload();
+function restart () {
+  console.log("clicked");
+  a = 0;
+  b = 0;
+  c = 0;
+  d = 0;
+  e = 0;
+  f = 0;
+  g = 0;
+  h = 0;
+  i = 0;
+  turn = 0;
+  counter = 0;
+  $("td").removeClass("boxes2");
+  $("td").removeClass("boxes");
+  $("td").addClass("boxes");
+  $("td").removeClass("blue");
+  $("td").removeClass("red");
+  $("td").css("background-color", "#DEEFF5");
+  $("#clickButton").css("visibility", "hidden");
 };
 
 $("table").on("click", ".boxes", function() {
-  if ($(this).hasClass("blue") || $(this).hasClass("red")) {
-    alert("Please choose a different square!")
-  } else {
-      $(this).css("background-color", "red");
-      $(this).addClass("red");
-      $("td").removeClass("boxes");
-      $("td").addClass("boxes2");
-      // red.push($(this).attr("id"));
-      if (($(this).attr("id") === "box1")) {
-        a = 1;
-      }
-      else if (($(this).attr("id") === "box2")) {
-        b = 1;
-      }
-      else if (($(this).attr("id") === "box3")) {
-        c = 1;
-      }
-      else if (($(this).attr("id") === "box4")) {
-        d = 1;
-      }
-      else if (($(this).attr("id") === "box5")) {
-        e = 1;
-      }
-      else if (($(this).attr("id") === "box6")) {
-        f = 1;
-      }
-      else if (($(this).attr("id") === "box7")) {
-        g = 1;
-      }
-      else if (($(this).attr("id") === "box8")) {
-        h = 1;
-      }
-      else if (($(this).attr("id") === "box9")) {
-        i = 1;
-      }
-      counter += 1;
-      redWinCheck();
-    }
-});
-
-$("table").on("click", ".boxes2", function() {  
-  if ($(this).hasClass("blue") || $(this).hasClass("red")) {
-    alert("Please choose a different square!")
-  } else { 
-    $(this).css("background-color", "blue");
-    $(this).addClass("blue");
-    $("td").removeClass("boxes2");
-    $("td").addClass("boxes");
-    // blue.push($(this).attr("id"));
+if ($(this).hasClass("blue") || $(this).hasClass("red")) {
+  alert("Please choose a different square!")
+} else {
+    $(this).css("background-color", "red");
+    $(this).addClass("red");
+    $("td").removeClass("boxes");
+    $("td").addClass("boxes2");
+    // red.push($(this).attr("id"));
+    turn = 1;
     if (($(this).attr("id") === "box1")) {
-        a = 4;
-      }
-      else if (($(this).attr("id") === "box2")) {
-        b = 4;
-      }
-      else if (($(this).attr("id") === "box3")) {
-        c = 4;
-      }
-      else if (($(this).attr("id") === "box4")) {
-        d = 4;
-      }
-      else if (($(this).attr("id") === "box5")) {
-        e = 4;
-      }
-      else if (($(this).attr("id") === "box6")) {
-        f = 4;
-      }
-      else if (($(this).attr("id") === "box7")) {
-        g = 4;
-      }
-      else if (($(this).attr("id") === "box8")) {
-        h = 4;
-      }
-      else if (($(this).attr("id") === "box9")) {
-        i = 4;
-      }
-      counter += 1;
-      blueWinCheck();
+      a = 1;
+    }
+    else if (($(this).attr("id") === "box2")) {
+      b = 1;
+    }
+    else if (($(this).attr("id") === "box3")) {
+      c = 1;
+    }
+    else if (($(this).attr("id") === "box4")) {
+      d = 1;
+    }
+    else if (($(this).attr("id") === "box5")) {
+      e = 1;
+    }
+    else if (($(this).attr("id") === "box6")) {
+      f = 1;
+    }
+    else if (($(this).attr("id") === "box7")) {
+      g = 1;
+    }
+    else if (($(this).attr("id") === "box8")) {
+      h = 1;
+    }
+    else if (($(this).attr("id") === "box9")) {
+      i = 1;
+    }
+    counter += 1;
+    redWinCheck();
   }
 });
 
-
-
-
-// var red = [];
-// var blue = [];
-
-// var winningCombos = [["box1","box2","box3"],
-//                      ["box4","box5","box6"],
-//                      ["box7","box8","box9"],
-//                      ["box1","box4","box7"],
-//                      ["box2","box5","box8"],
-//                      ["box3","box6","box9"],
-//                      ["box1","box5","box9"],
-//                      ["box3","box5","box7"]];
-
-
-// for (i=0; i<red.length; i++) {
-//   for (j=0; j<winningCombos.length; j++) {
-//     for (k=0; k<winningCombos[j]; k++) {
-//       if (red[i] === winningCombos[j][k]) {
-//         var a = true;
-//         console.log(red[i]);
-//       }
-//     }
-//   }
-// }
-
-
-// // for (var i = 0; i < winningCombos.length; i++) {
-// //   console.log(red);
-// //   console.log(winningCombos[i]);
-// //           if (red === (winningCombos[i])) {
-// //             winner.push(winningCombos[i]);
-// // }
-// }
-
-
-// for (var i = 0; i < winningCombos.length; i++) {
-//   for (var j = 0; j < winningCombos[i].length; j++) {
-//     console.log(winningCombos[i]);
-//     for (k = 0; k < red.length; k++) {
-//       if (red([k]) === winningCombos([i][j])) {
-//       // console.log(winningCombos[i][j]);
-//       winner.push(winningCombos[i][j]);
-//       console.log(winner);
-//       }
-//     }
-//   } 
-//     if (winner.length === 3) {
-//         alert("you win");
-//     }
-// };
-
-
-    // for (var i=0; i<blue.length; i++) {
-    //   for (var j=0; j<winningCombos.length; j++) {
-    //     for (var k=0; k<winningCombos[j].length; k++) {
-    //       if (blue[i] === winningCombos[j][k]) {
-    //       blueWinner.push(winningCombos[j][k])
-    //       }
-    //     }
-    //   }
-    // }
-
-
-
-
-
+$("table").on("click", ".boxes2", function() { 
+if ($(this).hasClass("blue") || $(this).hasClass("red")) {
+  alert("Please choose a different square!")
+} else { 
+  $(this).css("background-color", "blue");
+  $(this).addClass("blue");
+  $("td").removeClass("boxes2");
+  $("td").addClass("boxes");
+  // blue.push($(this).attr("id"));
+  turn = 0;
+  if (($(this).attr("id") === "box1")) {
+      a = 4;
+    }
+    else if (($(this).attr("id") === "box2")) {
+      b = 4;
+    }
+    else if (($(this).attr("id") === "box3")) {
+      c = 4;
+    }
+    else if (($(this).attr("id") === "box4")) {
+      d = 4;
+    }
+    else if (($(this).attr("id") === "box5")) {
+      e = 4;
+    }
+    else if (($(this).attr("id") === "box6")) {
+      f = 4;
+    }
+    else if (($(this).attr("id") === "box7")) {
+      g = 4;
+    }
+    else if (($(this).attr("id") === "box8")) {
+      h = 4;
+    }
+    else if (($(this).attr("id") === "box9")) {
+      i = 4;
+    }
+    counter += 1;
+    blueWinCheck();
+  }
+}); 
 

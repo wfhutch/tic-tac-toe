@@ -3,30 +3,67 @@ body {
   background-color: #DEEFF5;
 }
 
+header {
+  margin-top: 20px;
+}
+
 table {
-	width: 40%;
-	margin: auto auto;
+	width: 50%;
+  margin-top: 0px;
+	margin: auto;
 	border-collapse: collapse;
+  clear: both;
+}
+
+thead {
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bolder;
+  font-size: 2.5em;
 }
 
 th {
-  font-size: 2em;
+  font-size: 1.3em;
+  padding: 10px;
 }
 
 td {
-  border: 2px solid black;
-  width: 100px;
-  height: 150px;
+  border: 5px solid black;
+  width: 150px;
+  height: 200px;
+}
+
+#redScore {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
+  font-weight: 700;
+  color: red;
+  width: 20%;
+  text-align: center;
+}
+
+#blueScore {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
+  font-weight: 700;
+  color: blue;
+  width: 20%;
+  text-align: left;
+  float: right;
+  clear: left;
+}
+
+#score {
+  margin-top: 50px;
 }
 
 #buttonDiv {
-	width: 30%;
-	margin: 30px auto 0 auto;
+	width: 20%;
+	margin: auto;
 }
 
 #clickButton {
-	width: 200px;
-	margin-left: 85px;
+	width: 100%;
+	margin: auto;
 	background-color: yellow;
 	visibility: hidden;
   padding: 15px;
@@ -35,3 +72,38 @@ td {
   font-size: 1em;
 }
 
+#box1 {
+  border-top: none;
+  border-left: none;
+}
+
+#box2 {
+  border-top: none;
+}
+
+#box3 {
+  border-top: none;
+  border-right: none;
+}
+
+#box4 {
+  border-left: none;
+}
+
+#box6 {
+  border-right: none;
+}
+
+#box7 {
+  border-left: none;
+  border-bottom: none;
+}
+
+#box8 {
+  border-bottom: none;
+}
+
+#box9 {
+  border-bottom: none;
+  border-right: none;
+}
