@@ -127,7 +127,6 @@ if ($(this).hasClass("blue") || $(this).hasClass("red")) {
     $(this).addClass("red");
     $("td").removeClass("boxes");
     $("td").addClass("boxes2");
-    // red.push($(this).attr("id"));
     turn = 1;
     if (($(this).attr("id") === "box1")) {
       a = 1;
@@ -169,7 +168,6 @@ if ($(this).hasClass("blue") || $(this).hasClass("red")) {
   $(this).addClass("blue");
   $("td").removeClass("boxes2");
   $("td").addClass("boxes");
-  // blue.push($(this).attr("id"));
   turn = 0;
   if (($(this).attr("id") === "box1")) {
       a = 4;
@@ -202,4 +200,6 @@ if ($(this).hasClass("blue") || $(this).hasClass("red")) {
     blueWinCheck();
   }
 }); 
+
+
 
